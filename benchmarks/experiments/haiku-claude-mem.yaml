@@ -1,0 +1,13 @@
+name: haiku-claude-mem
+description: >
+  Memory-plugin A/B — warmup writes compressed memory; later turns measure
+  cache reads vs baseline restated context.
+agent:
+  kind: mock
+  model: mock-haiku
+suite: simple-prompts
+baseline: none
+treatment: claude-mem
+repeats: 1
+docker: false
+output_dir: results

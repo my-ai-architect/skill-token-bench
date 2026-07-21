@@ -1,0 +1,17 @@
+# USD per 1M tokens — override defaults used for estimated_cost_usd
+models:
+  mock-haiku:
+    input: 1.0
+    output: 5.0
+    cache_read: 0.1
+    cache_write: 1.25
+  claude-haiku-4-5:
+    input: 1.0
+    output: 5.0
+    cache_read: 0.1
+    cache_write: 1.25
+  claude-sonnet-4-5:
+    input: 3.0
+    output: 15.0
+    cache_read: 0.3
+    cache_write: 3.75

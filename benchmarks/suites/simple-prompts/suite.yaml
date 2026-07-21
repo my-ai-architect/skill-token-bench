@@ -1,0 +1,30 @@
+name: simple-prompts
+description: Short text prompts — output-style and verbosity dominate token use.
+tasks:
+  - id: explain-git-rebase
+    kind: prompt
+    description: Explain a common git concept
+    prompt: >
+      Explain git rebase vs merge for someone who just wants to know which
+      button to press in their GUI.
+    success_regex: "rebase|merge"
+    tags: [text, conceptual]
+
+  - id: debug-null-pointer
+    kind: prompt
+    description: Action-oriented debugging advice
+    prompt: >
+      My Python script crashes with AttributeError: 'NoneType' object has no
+      attribute 'strip' on line 42 of ingest.py. What should I do next?
+    success_regex: "ingest|None|strip|line"
+    tags: [text, debugging]
+
+  - id: prioritize-backlog
+    kind: prompt
+    description: Force a concrete next action
+    prompt: >
+      I have three tasks: fix a flaky test, answer a Slack question about
+      billing, and draft a design doc. I have 25 minutes. What do I do first
+      and exactly how?
+    success_regex: "1\\.|first|minutes"
+    tags: [text, prioritization]

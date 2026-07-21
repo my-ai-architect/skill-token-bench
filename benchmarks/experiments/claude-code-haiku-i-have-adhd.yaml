@@ -1,0 +1,15 @@
+name: claude-code-haiku-i-have-adhd
+description: >
+  Live Claude Code run (requires ANTHROPIC_API_KEY and `claude` CLI or Docker
+  image with claude installed). Same skill comparison as the mock demo.
+agent:
+  kind: claude-code
+  model: claude-haiku-4-5
+  image: skill-token-bench/agent-base:latest
+  env: {}
+suite: simple-prompts
+baseline: none
+treatment: i-have-adhd
+repeats: 1
+docker: true
+output_dir: results

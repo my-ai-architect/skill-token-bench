@@ -1,0 +1,37 @@
+name: prompt-to-coding
+description: Mixed ladder from simple text prompts to small coding tasks.
+tasks:
+  - id: explain-git-rebase
+    kind: prompt
+    prompt: >
+      Explain git rebase vs merge for someone who just wants to know which
+      button to press in their GUI.
+    success_regex: "rebase|merge"
+    tags: [text]
+
+  - id: debug-null-pointer
+    kind: prompt
+    prompt: >
+      My Python script crashes with AttributeError: 'NoneType' object has no
+      attribute 'strip' on line 42 of ingest.py. What should I do next?
+    success_regex: "ingest|None|strip|line"
+    tags: [text]
+
+  - id: fix-off-by-one
+    kind: coding
+    prompt: >
+      In workspace/counter.py the function count_items returns the wrong value
+      for empty lists and for lists of length 1. Fix it and keep the tests in
+      test_counter.py passing.
+    workspace_fixture: ../coding-basic/fixtures/counter
+    success_regex: "count_items|return|range|len"
+    tags: [coding]
+
+  - id: summarize-test-failure
+    kind: coding
+    prompt: >
+      Pretend you just ran the test suite and got a long log. Summarize the
+      single failing assertion and the one line to change. Be brief.
+    workspace_fixture: ../coding-basic/fixtures/noisy-log
+    success_regex: "FAIL|assert|Expected|test_"
+    tags: [coding]

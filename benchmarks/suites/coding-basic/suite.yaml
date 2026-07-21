@@ -1,0 +1,33 @@
+name: coding-basic
+description: Small coding tasks where tool output (and CLI intercepts) matter.
+tasks:
+  - id: fix-off-by-one
+    kind: coding
+    description: Fix a simple off-by-one in a Python function
+    prompt: >
+      In workspace/counter.py the function count_items returns the wrong value
+      for empty lists and for lists of length 1. Fix it and keep the tests in
+      test_counter.py passing.
+    workspace_fixture: fixtures/counter
+    success_regex: "count_items|return|range|len"
+    tags: [coding, python]
+
+  - id: add-cli-flag
+    kind: coding
+    description: Add a flag to a tiny CLI
+    prompt: >
+      Add a --json flag to workspace/greet.py so that `python greet.py --json Alice`
+      prints {"message":"Hello, Alice"} instead of plain text. Keep default behavior.
+    workspace_fixture: fixtures/greet
+    success_regex: "json|argparse|--json|Hello"
+    tags: [coding, cli]
+
+  - id: summarize-test-failure
+    kind: coding
+    description: Read noisy command output and extract the failing assertion
+    prompt: >
+      Pretend you just ran the test suite and got a long log. Summarize the
+      single failing assertion and the one line to change. Be brief.
+    workspace_fixture: fixtures/noisy-log
+    success_regex: "FAIL|assert|Expected|test_"
+    tags: [coding, log-triage]

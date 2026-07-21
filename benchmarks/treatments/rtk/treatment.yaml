@@ -1,0 +1,17 @@
+name: rtk
+kind: cli_intercept
+description: >
+  CLI proxy treatment modeled on rtk-ai/rtk — compresses noisy command output
+  before it re-enters the model context (big input-token lever on coding tasks).
+source:
+  git: https://github.com/rtk-ai/rtk
+  ref: main
+binary: rtk
+wrap_commands:
+  - git
+  - npm
+  - pytest
+  - cargo
+  - ls
+env:
+  STB_MOCK_RTK: "1"

@@ -1,0 +1,15 @@
+name: claude-mem
+kind: memory
+description: >
+  Persistent memory treatment modeled on thedotmack/claude-mem. Warmup tasks
+  write compressed session memory; later tasks pay cache-read cost and (ideally)
+  spend fewer prompt tokens restating context.
+source:
+  git: https://github.com/thedotmack/claude-mem
+  ref: main
+warmup_task_ids:
+  - explain-git-rebase
+install_commands:
+  - "Follow upstream install docs for the target agent harness"
+env:
+  STB_MEMORY_MODE: compress-and-inject

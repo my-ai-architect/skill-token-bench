@@ -1,0 +1,13 @@
+name: haiku-rtk
+description: >
+  CLI-intercept A/B — measure input-token savings from compressing command
+  output (rtk-style) on coding-heavy tasks.
+agent:
+  kind: mock
+  model: mock-haiku
+suite: coding-basic
+baseline: none
+treatment: rtk
+repeats: 2
+docker: false
+output_dir: results

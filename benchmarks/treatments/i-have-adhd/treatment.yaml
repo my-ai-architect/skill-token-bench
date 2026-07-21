@@ -1,0 +1,11 @@
+name: i-have-adhd
+kind: skill
+description: >
+  ADHD-friendly output skill (ayghri/i-have-adhd). Measures whether shorter,
+  action-first answers reduce output tokens without tanking task success.
+source:
+  git: https://github.com/ayghri/i-have-adhd
+  ref: main
+  path: skills/i-have-adhd
+skill_path: .
+mount_path: /skills/i-have-adhd

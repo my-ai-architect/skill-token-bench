@@ -1,0 +1,14 @@
+name: haiku-i-have-adhd
+description: >
+  Classic skill A/B — Claude Haiku (or mock-haiku offline) with and without
+  the i-have-adhd output skill across prompt→coding tasks.
+agent:
+  kind: mock
+  model: mock-haiku
+  image: skill-token-bench/agent-base:latest
+suite: prompt-to-coding
+baseline: none
+treatment: i-have-adhd
+repeats: 2
+docker: false
+output_dir: results
